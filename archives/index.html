@@ -393,6 +393,22 @@
 						<h2>2020</h2>
 					
 						<div class='timenode'>
+								<a class="meta" href="/2020/09/27/Mysql-%E4%BA%8B%E5%8A%A1/">
+									<time>09-27</time>
+									
+										【基础】 Mysql 事务
+									
+									
+									
+									
+								</a>
+						</div>
+				
+			
+				
+				
+					
+						<div class='timenode'>
 								<a class="meta" href="/2020/09/21/hello-world/">
 									<time>09-21</time>
 									
@@ -508,6 +524,11 @@
             id="categoriesDiary"
             ><div class='name'>Diary</div><div class='badge'>(1)</div></a></li>
         
+          <li><a class="flat-box"
+            title="/categories/%E5%9F%BA%E7%A1%80/" href="/categories/%E5%9F%BA%E7%A1%80/"
+            id="categoriesE59FBAE7A180"
+            ><div class='name'>基础</div><div class='badge'>(1)</div></a></li>
+        
       </ul>
     </div>
   </section>
@@ -520,7 +541,7 @@
     
   
 
-  <section class="widget tagcloud shadow desktop mobile">
+  <section class="widget tagcloud shadow desktop">
     
   <header>
     
@@ -530,7 +551,7 @@
 
 
     <div class='content'>
-      <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 14px; color: #999">随笔</a>
+      <a href="/tags/Mysql/" style="font-size: 14px; color: #999">Mysql</a> <a href="/tags/%E9%9A%8F%E7%AC%94/" style="font-size: 14px; color: #999">随笔</a>
     </div>
   </section>
 
@@ -1195,7 +1216,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
       // 请求 PV 并自增
       var pvCtn = document.querySelector('#lc-sv');
       if (pvCtn || enableIncr) {
-        var pvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-sv', 'Visits').then((record) => {
+        var pvGetter = this.getRecord(Counter, 'https://tqyao.cn' + '/#lc-sv', 'Visits').then((record) => {
           incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-sv #number');
           if (eles.length > 0) {
@@ -1213,7 +1234,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
       // 请求 UV 并自增
       var uvCtn = document.querySelector('#lc-uv');
       if (uvCtn || enableIncr) {
-        var uvGetter = this.getRecord(Counter, 'http://example.com' + '/#lc-uv', 'Visitors').then((record) => {
+        var uvGetter = this.getRecord(Counter, 'https://tqyao.cn' + '/#lc-uv', 'Visitors').then((record) => {
           var vuv = this.validUV();
           vuv && incrArr.push(this.buildIncrement(record.objectId))
           var eles = document.querySelectorAll('#lc-uv #number');
@@ -1235,7 +1256,7 @@ const ROOT =  ("/" || "/").endsWith('/') ? ("/" || "/") : ("//" || "/" );
         for (i = 0; i < allPV.length; i++) {
           let pv = allPV[i];
           let title = pv.getAttribute('data-title');
-          var url = 'http://example.com' + pv.getAttribute('data-path');
+          var url = 'https://tqyao.cn' + pv.getAttribute('data-path');
           if (url) {
             var viewGetter = this.getRecord(Counter, url, title).then((record) => {
               // 是当前页面就自增
