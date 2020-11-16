@@ -17,9 +17,9 @@
 
   <!-- 页面元数据 -->
   
-  <title>【干货】git使用总结 - Y-Blog</title>
+  <title>LEET-CODE_2. 两数平方和 - Y-Blog</title>
   
-    <meta name="keywords" content="git">
+    <meta name="keywords" content="leetcode">
   
 
   
@@ -352,7 +352,7 @@
  
 <div id="pjax-data" style="display: none"> 
   <div id="pjax-ispage">true</div> 
-  <div id="pjax-pageTitle">【干货】git使用总结</div> 
+  <div id="pjax-pageTitle">LEET-CODE_2. 两数平方和</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path"></div> 
   <div id="pjax-comment-placeholder"></div> 
@@ -392,7 +392,7 @@
     
     
       <h1 class="title">
-        【干货】git使用总结
+        LEET-CODE_2. 两数平方和
       </h1>
       <div class='new-meta-box'>
         
@@ -416,7 +416,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：2020年10月21日</p>
+    <p>发布于：2020年4月11日</p>
   </a>
 </div>
 
@@ -427,7 +427,7 @@
   <div class="new-meta-item browse leancloud">
     <a class='notlink'>
       
-      <div id="lc-pv" data-title="【干货】git使用总结" data-path="/2020/10/21/%E3%80%90%E5%B9%B2%E8%B4%A7%E3%80%91git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/">
+      <div id="lc-pv" data-title="LEET-CODE_2. 两数平方和" data-path="/2020/04/11/LEET-CODE-2-%E4%B8%A4%E6%95%B0%E5%B9%B3%E6%96%B9%E5%92%8C/">
         <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
         <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
         次浏览
@@ -444,41 +444,22 @@
 
 
   
-  <h3 id="1-基础概念"><a href="#1-基础概念" class="headerlink" title="1.基础概念"></a>1.基础概念</h3><blockquote>
-<p><img src="lifecycle.png" class="lazyload" data-srcset="lifecycle.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="lifecycle"></p>
+  <blockquote>
+<ol start="633">
+<li>Sum of Square Numbers (Easy)</li>
+</ol>
 </blockquote>
-<p>1.1 git中的文件有以下几种状态：</p>
-<p><strong>Untracked</strong>：未跟踪,此文件在文件夹中, 但并没有加入到git库, 不参与版本控制. 通过<code>git add </code>状态变为<code>Staged</code></p>
-<p><strong>Unmodify</strong>：文件已经入库, 未修改, 即版本库中的文件快照内容与文件夹中完全一致.<br>这种类型的文件有两种去处, 如果它被修改, 而变为<code>Modified</code>. 如果使用git rm移出版本库, 则成为<code>Untracked</code>文件</p>
-<p><strong>Modified</strong>：文件已修改, 仅仅是修改, 并没有进行其他的操作. 这个文件也有两个去处, 通过<code>git add</code>可进入暂存<code>staged</code>状态,<br>使用<code>git checkout</code> 则丢弃修改过, 返回到<code>unmodify</code>状态, 这个<code>git checkout</code>即从库中取出文件, 覆盖当前修改                              </p>
-<p><strong>Staged</strong>：暂存状态， 执行<code>git commit</code>则将修改同步到库中, 这时库中的文件和本地文件又变为一致,文件为<code>Unmodify</code>状态. 执行<code>git reset HEAD filename</code>取消暂存, 文件状态为<code>Modified</code></p>
-<p><strong>committed</strong>: 已提交，提交到了本地版本库中<code>Repository（本地仓库）</code>，这是你想回退版本的话可以执行<code>git reset --hard HEAD^</code>       </p>
-<p>1.2 工作区域</p>
+<p><a target="_blank" rel="noopener" href="https://leetcode.com/problems/sum-of-square-numbers/description/">Leetcode</a> / <a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sum-of-square-numbers/description/">力扣</a><br>题目描述：判断一个非负整数是否为两个整数的平方和。</p>
+<p>给定一个非负整数 c ，你要判断是否存在两个整数 a 和 b，使得 a2 + b2 = c。<br> 示例1:</p>
 <blockquote>
-<p><img src="%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" class="lazyload" data-srcset="%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="git流程"></p>
+<p>输入: 5<br>输出: True<br>解释: 1 * 1 + 2 * 2 = 5</p>
 </blockquote>
-<p>1.2.1 本地计算机</p>
-<p><code>Working Directory（工作目录）</code>：即正在编辑的文件状态。文件状态为未跟踪（untrack）和已修改（modified）在此区域内。</p>
-<p><code>Index / Stage（暂存区）</code>：保存了下次将提交的文件列表信息。文件状态为已暂存（staged）在此区域内。</p>
-<p><code>Repository（本地仓库）</code>：提交到本地仓库的文件。</p>
-<p>1.2.2 远程计算机</p>
-<p><code>Remote Repository（远程仓库）</code>：已提交到远程计算机内的文件。</p>
-<h3 id="2-常见操作"><a href="#2-常见操作" class="headerlink" title="2.常见操作"></a>2.常见操作</h3><p>2.1 撤销修改</p>
-<h4 id="情景一："><a href="#情景一：" class="headerlink" title="情景一："></a>情景一：</h4><p><strong>git checkout –文件</strong> 意思就是把XX（下面的Branch1.java）文件在工作区的修改全部撤销，有两种情况    </p>
-<ul>
-<li><p>情况一： Branch1.java 在版本库中，对 Branch1.java 进行了修改但是没有暂存（<code>git add 文件</code>），此时文件此时是处于<code>Modified</code>状态</p>
+<p>示例2:</p>
 <blockquote>
-<p>使用<code>git checkout -- git-demo/src/test/java/cn/tqyao/git/config/Branch1.java</code>，此时 Branch1.java 回到和版本库一模一样的状态   </p>
+<p>输入: 3<br>输出: False</p>
 </blockquote>
-</li>
-</ul>
-<ul>
-<li>情况二： 文件在版本库中，且文件 Branch1.java 已经添加到暂存区，此时文件处于modified状态</li>
-</ul>
-<blockquote>
-<p><code>git checkout -- git-demo/src/test/java/cn/tqyao/git/config/Branch1.java</code>，此时 Branch1.java 回到添加到暂存区后的状态</p>
-</blockquote>
-<h4 id="情景二"><a href="#情景二" class="headerlink" title="情景二"></a>情景二</h4><h4 id="情景三"><a href="#情景三" class="headerlink" title="情景三"></a>情景三</h4>
+<h6 id="方法一：使用-sqrt-函数"><a href="#方法一：使用-sqrt-函数" class="headerlink" title="方法一：使用 sqrt 函数"></a>方法一：使用 sqrt 函数</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line">    * 使用 sqrt 函数</span><br><span class="line">    * @param c</span><br><span class="line">    * @return</span><br><span class="line">    *&#x2F;</span><br><span class="line">   public boolean judgeSquareSum4(int c)&#123;</span><br><span class="line">       for (int a &#x3D; 0;a*a &lt; c;a++)&#123;</span><br><span class="line">           double b &#x3D; Math.sqrt(c - a*a);</span><br><span class="line">           if (b &#x3D;&#x3D; (int)b)&#123;</span><br><span class="line">               return true;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return false;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="方法一：二分查找"><a href="#方法一：二分查找" class="headerlink" title="方法一：二分查找"></a>方法一：二分查找</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public boolean judgeSquareSum(int c) &#123;</span><br><span class="line">       &#x2F;&#x2F; 根据条件，有 b &#x3D; c- a*a</span><br><span class="line">       &#x2F;&#x2F;循环迭代a，因为 (a*a) 所以只需要找出 b 能否开方出正整数</span><br><span class="line">       for (long a &#x3D; 0; a * a &lt;&#x3D; c; a++) &#123;</span><br><span class="line">           int b &#x3D; c - (int)(a * a);</span><br><span class="line">           &#x2F;&#x2F;二分法查找b能否开方出正整数</span><br><span class="line">           if (binary_search(0, b, b)) &#123;</span><br><span class="line">               return true;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       return false;</span><br><span class="line">   &#125;</span><br><span class="line">   &#x2F;&#x2F;双指针 左指针从0开始，</span><br><span class="line">   public boolean binary_search(long s, long e, int n) &#123;</span><br><span class="line">       &#x2F;&#x2F;如果 左指针大于右指针证明n无正整数方根</span><br><span class="line">       if (s &gt; e) &#123;</span><br><span class="line">           return false;</span><br><span class="line">       &#125;</span><br><span class="line">       &#x2F;&#x2F;查找指针中间值</span><br><span class="line">       long mid &#x3D; s + (e - s) &#x2F; 2;</span><br><span class="line">       &#x2F;&#x2F;如果min *min &#x3D; n ，则 n 的开方等于 min，返回ture</span><br><span class="line">       if (mid * mid &#x3D;&#x3D; n)&#123;</span><br><span class="line">           return true;</span><br><span class="line">       &#125;</span><br><span class="line">       &#x2F;&#x2F;如果mid * mid &gt; n，则移动左指针（减小中间值），再次二分法找中间值的，计算min是否是n的二元平方根</span><br><span class="line">       if (mid * mid &gt; n)&#123;</span><br><span class="line">           return binary_search(s, mid - 1, n);</span><br><span class="line">       &#125;</span><br><span class="line">   &#x2F;&#x2F;如果mid * mid &lt; n，则移动右指针（增大中间值），再次二分法找中间值的，计算是min否是n的二元平方根</span><br><span class="line">       return binary_search(mid + 1, e, n);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
   
   
     
@@ -495,7 +476,7 @@
               
             
               
-                <p>本文永久链接是：<a href=https://tqyao.cn/2020/10/21/%E3%80%90%E5%B9%B2%E8%B4%A7%E3%80%91git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/>https://tqyao.cn/2020/10/21/%E3%80%90%E5%B9%B2%E8%B4%A7%E3%80%91git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/</a></p>
+                <p>本文永久链接是：<a href=https://tqyao.cn/2020/04/11/LEET-CODE-2-%E4%B8%A4%E6%95%B0%E5%B9%B3%E6%96%B9%E5%92%8C/>https://tqyao.cn/2020/04/11/LEET-CODE-2-%E4%B8%A4%E6%95%B0%E5%B9%B3%E6%96%B9%E5%92%8C/</a></p>
               
             
           </blockquote>
@@ -512,10 +493,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-10-21T20:48:41+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-11-16T10:11:06+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年10月21日</p>
+    <p>更新于：2020年11月16日</p>
   </a>
 </div>
 
@@ -524,7 +505,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/git/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>git</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/leetcode/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>leetcode</p></a></div>
 
 
         
@@ -537,7 +518,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tqyao.cn/2020/10/21/%E3%80%90%E5%B9%B2%E8%B4%A7%E3%80%91git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/&title=【干货】git使用总结 - Y-Blog&summary="
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://tqyao.cn/2020/04/11/LEET-CODE-2-%E4%B8%A4%E6%95%B0%E5%B9%B3%E6%96%B9%E5%92%8C/&title=LEET-CODE_2. 两数平方和 - Y-Blog&summary="
           
           >
           
@@ -549,7 +530,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tqyao.cn/2020/10/21/%E3%80%90%E5%B9%B2%E8%B4%A7%E3%80%91git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/&title=【干货】git使用总结 - Y-Blog&summary="
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://tqyao.cn/2020/04/11/LEET-CODE-2-%E4%B8%A4%E6%95%B0%E5%B9%B3%E6%96%B9%E5%92%8C/&title=LEET-CODE_2. 两数平方和 - Y-Blog&summary="
           
           >
           
@@ -561,7 +542,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
           
-          target="_blank" href="http://service.weibo.com/share/share.php?url=https://tqyao.cn/2020/10/21/%E3%80%90%E5%B9%B2%E8%B4%A7%E3%80%91git%E4%BD%BF%E7%94%A8%E6%80%BB%E7%BB%93/&title=【干货】git使用总结 - Y-Blog&summary="
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://tqyao.cn/2020/04/11/LEET-CODE-2-%E4%B8%A4%E6%95%B0%E5%B9%B3%E6%96%B9%E5%92%8C/&title=LEET-CODE_2. 两数平方和 - Y-Blog&summary="
           
           >
           
@@ -591,18 +572,29 @@
   
     <div class="prev-next">
       
+        <a class='prev' href='/2020/04/12/LEET-CODE-3-%E5%8F%8D%E8%BD%AC%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E9%9F%B3%E5%AD%97%E7%AC%A6/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>LEET-CODE_3. 反转字符串中的元音字符</p>
+          <p class='content'>
+
+Reverse Vowels of a String (Easy)
+
+
+Leetcode / 力扣
+题目：编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
+示例 1:
+
+输入: “...</p>
+        </a>
       
-        <a class='next' href='/2020/10/17/%E3%80%90%E5%88%9D%E8%A7%81%E3%80%91js%E5%9F%BA%E6%9C%AC%E7%9F%A5%E8%AF%86/'>
-          <p class='title'>【初见】js基本知识<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>js1.es
+      
+        <a class='next' href='/2020/04/10/LEET-CODE-1-%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84-Two-Sum/'>
+          <p class='title'>LEET-CODE_1. 有序数组的 Two Sum<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>
+167.Two Sum II - Input array is sorted (Easy)
 
-js基本语法
+Leetcode / 力扣题目描述：在有序数组中找出两个数，使它们的和为 target。
 
-2.dom（文档对象模型）
-
-当网页被加载时，浏览器会创建页面的文档对象模型（Document Object Model）。
-
-3.bom（Browser Obj...</p>
+Inp...</p>
         </a>
       
     </div>
@@ -645,7 +637,7 @@ js基本语法
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5"><span class="toc-text">1.基础概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C"><span class="toc-text">2.常见操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%85%E6%99%AF%E4%B8%80%EF%BC%9A"><span class="toc-text">情景一：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%85%E6%99%AF%E4%BA%8C"><span class="toc-text">情景二</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%85%E6%99%AF%E4%B8%89"><span class="toc-text">情景三</span></a></li></ol></li></ol>
+        
     </div>
   </section>
 
